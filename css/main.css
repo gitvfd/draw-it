@@ -191,6 +191,7 @@ padding: 10px 20px 10px 20px;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
 
 @media all and (max-width: 700px) {
     .y.axis  text {
