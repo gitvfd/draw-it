@@ -170,6 +170,28 @@ padding: 10px 20px 10px 20px;
     font : 26px TheSerif; fill:#7A7A7A;
 }
 
+#guesswhat .donottouch {
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#guesswhat .try1,
+#guesswhat .try2,
+#guesswhat .try3,
+#guesswhat .try4 {
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 @media all and (max-width: 700px) {
     .y.axis  text {
         display: none;

@@ -115,7 +115,7 @@
 
     svg.append("g")
     	.attr("transform", "translate(" + width/14+ ","+ "-"+ 10+")")
-        .attr("class", "y axis pastouche")
+        .attr("class", "y axis donottouch")
         .call(d3.axisLeft(y)
 	    .tickFormat(d3.format(".2s")));
 
@@ -241,7 +241,7 @@ $('.guide').css('opacity', '0.2');
 
 	                line1();
 	                endBubble();
-	                if (rectangle.select("line.essai2").empty() == false) line2();
+	                if (rectangle.select("line.try2").empty() == false) line2();
 	            }
 
 	            if (xx > x2a && xx <= x3a) {
@@ -252,7 +252,7 @@ $('.guide').css('opacity', '0.2');
 	                line1();
 	                line2();
 	                endBubble();
-	                if (rectangle.select("line.essai3").empty() == false) line3();
+	                if (rectangle.select("line.try3").empty() == false) line3();
 	            }
 
 
@@ -324,9 +324,9 @@ $('.guide').css('opacity', '0.2');
 
 
 	   function line1() {
-	        if (rectangle.select("line.essai1").empty() == true) {
+	        if (rectangle.select("line.try1").empty() == true) {
 	            rectangle.append("line")
-	                .attr("class", "essai1")
+	                .attr("class", "try1")
 	                .attr("stroke-dasharray", dashed)
 	                .attr("stroke", drawLine)
 	                .attr("stroke-width", 3)
@@ -343,7 +343,7 @@ $('.guide').css('opacity', '0.2');
 
 
 	        } else {
-	            rectangle.select("line.essai1")
+	            rectangle.select("line.try1")
 	                .attr("x1", x1)
 	                .attr("y1", y1)
 	                .attr("x2", x2)
@@ -353,9 +353,9 @@ $('.guide').css('opacity', '0.2');
 	    };
 
 	    function line2() {
-	        if (rectangle.select("line.essai2").empty() == true) {
+	        if (rectangle.select("line.try2").empty() == true) {
 	            rectangle.append("line")
-	                .attr("class", "essai2")
+	                .attr("class", "try2")
 	                .attr("stroke-dasharray", dashed)
 	                .attr("stroke", drawLine)
 	                .attr("stroke-width", 3)
@@ -369,7 +369,7 @@ $('.guide').css('opacity', '0.2');
 			        .attr("x",x3)
 			        .attr("width", (x(d3.max(data, function(d) { return parseTime(d.date); })) - x(parseTime(breakDate)))-2*(x2-x1));
 	        } else {
-	            rectangle.select("line.essai2")
+	            rectangle.select("line.try2")
 	                .attr("x1", x2)
 	                .attr("y1", y2)
 	                .attr("x2", x3)
@@ -381,9 +381,9 @@ $('.guide').css('opacity', '0.2');
 	    };
 
 	    function line3() {
-	        if (rectangle.select("line.essai3").empty() == true) {
+	        if (rectangle.select("line.try3").empty() == true) {
 	            rectangle.append("line")
-	                .attr("class", "essai3")
+	                .attr("class", "try3")
 	                .attr("stroke-dasharray", dashed)
 	                .attr("stroke", drawLine)
 	                .attr("stroke-width", 3)
@@ -399,7 +399,7 @@ $('.guide').css('opacity', '0.2');
 			        .attr("width", (x(d3.max(data, function(d) { return parseTime(d.date); })) - x(parseTime(breakDate)))-3*(x2-x1));
 
 	        } else {
-	            rectangle.select("line.essai3")
+	            rectangle.select("line.try3")
 	                .attr("x1", x3)
 	                .attr("y1", y3)
 	                .attr("x2", x4)
@@ -408,9 +408,9 @@ $('.guide').css('opacity', '0.2');
 	    };
 
 	    function line4() {
-	        if (rectangle.select("line.essai4").empty() == true) {
+	        if (rectangle.select("line.try4").empty() == true) {
 	            rectangle.append("line")
-	                .attr("class", "essai4")
+	                .attr("class", "try4")
 	                .attr("stroke-dasharray", dashed)
 	                .attr("stroke", drawLine)
 	                .attr("stroke-width", 3)
@@ -424,7 +424,7 @@ $('.guide').css('opacity', '0.2');
 			    svg.selectAll(".annotation")
 			    	.remove();
 	        } else {
-	            rectangle.select("line.essai4")
+	            rectangle.select("line.try4")
 	                .attr("x1", x4)
 	                .attr("y1", y4)
 	                .attr("x2", x5)
@@ -436,7 +436,7 @@ $('.guide').css('opacity', '0.2');
 	    function endBubble() {
 	        if (rectangle.select("circle").empty() == true) {
 	            rectangle.append("circle")
-	                .attr("class","pastouche")
+	                .attr("class","donottouch")
 	                .attr("fill", drawLine)
 	                .attr("cx", x5)
 	                .attr("cy", y5)
@@ -455,7 +455,7 @@ $('.guide').css('opacity', '0.2');
 	                    else return y5 - decalage
 	                })
 	                .attr("text-anchor", "middle")
-	                .attr("class", "dataLabel pastouche");
+	                .attr("class", "dataLabel donottouch");
 	        } else {
 	            rectangle.select("circle")
 	                .attr("cx", x5)
@@ -487,7 +487,7 @@ $('.guide').css('opacity', '0.2');
 	                    .attr("x", x(parseTime(2014)))
 	                    .attr("y", y(2.3))
 	                    .attr("text-anchor", "middle")
-	                    .attr("class", "real pastouche")
+	                    .attr("class", "real donottouch")
 	                    .text("Hollande");
 
 	                rectangle.selectAll("path.zonerose, text.real")
@@ -508,7 +508,7 @@ $('.guide').css('opacity', '0.2');
 	                    .attr("x", x(parseTime(2015)))
 	                    .attr("y", y(toDraw[4].value) - decalage)
 	                    .attr("text-anchor", "middle")
-	                    .attr("class", "real pastouche");
+	                    .attr("class", "real donottouch");
 	            });
 
 
@@ -536,7 +536,7 @@ $('.guide').css('opacity', '0.2');
 
 	    $("#validation").on("click", function() {
 	        if (first == true) {
-	            $("#guesswhat .validate").addClass("non pastouche")
+	            $("#guesswhat .validate").addClass("non donottouch")
 	            rectangle.selectAll("rect").style("pointer-events", "none")
 	            drawIt();
 	            document.getElementById('explanation').classList.remove('explanation');
